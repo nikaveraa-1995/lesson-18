@@ -1,0 +1,80 @@
+@use 'skin' as *;
+@use 'variables' as *;
+@use 'mixins-media' as *;
+/* Стили для header */
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  // background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон */
+  transition: background-color 0.3s ease;
+}
+
+.header:hover {
+  background-color: rgba(255, 255, 255, 1); /* Белый фон при наведении */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.header-logo a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.header-nav .nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .nav-list li {
+  margin-right: 20px;
+}
+
+.header-nav .nav-list li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.header-search .search-form {
+  display: flex;
+}
+
+.header-search input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px 0 0 3px;
+}
+
+.header-search button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.header-icons a {
+  margin-left: 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Стили для слайдера */
+.slider {
+  /* Фон слайдера */
+}
