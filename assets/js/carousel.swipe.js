@@ -11,8 +11,8 @@ class SwipeCarousel extends Carousel {
     if (this._swipeStartX - this._swipeEndX > 100) this._next();
   }
 
-  _initListeners() {
-    super._initListeners();
+  _initListener() {
+    super._initListener();
     this.container.addEventListener('touchstart', this._swipeStart.bind(this));
     this.container.addEventListener('touchend', this._swipeEnd.bind(this));
   }

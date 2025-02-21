@@ -50,120 +50,16 @@
     align-items: center; /* Выравниваем их по центру */
     gap: 15px; /* Добавляем расстояние между иконками */
   }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 .header:hover {
   background-color: rgba(255, 255, 255, 1); /* Белый фон при наведении */
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100px;
-  padding: 0px, 20px;
-}
-
-.menu-item {
-  color: white !important; /* Делаем белым и перебиваем другие стили */
-  font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
-  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease;
-}
-
-.header:hover .menu-item {
-  color: black !important;
-}
-
-.header-logo img {
-  filter: invert(1);
-}
-.header-icons i {
-  color: #fff;
-  transition: filter 0.3s ease;
-}
-
-/* При наведении на header делаем логотип и иконки черными */
-.header:hover .header-logo img {
-  filter: invert(0);
-  transition: color 0.3s ease;
-}
-.header:hover .header-icons i {
-  color: black;
-  transition: color 0.3s ease;
-}
-
-/* Контейнер поиска */
-.header-search {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* Выравниваем лупу и текст справа */
-  position: relative;
-  width: 180px; /* Фиксированная ширина */
-}
-
-/* Полоска (всегда видна) */
-.search-line {
-  width: 200px;
-  height: 1px;
-  background: white;
-  position: absolute;
-  bottom: -20px;
-}
-
-/* Лупа справа */
-.search-btn {
-  position: absolute;
-  left: 150px;
-  top: -10px; /* Над полоской */
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* Вводимый текст (находится над полоской) */
-.search-input {
-  width: 200px;
-  text-align: left;
-  font-size: 14px;
-  background: transparent;
-  color: white;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  position: absolute;
-  bottom: -10px; /* Размещение над полоской */
-}
-
-.search-input::placeholder {
-  color: white;
-  opacity: 1; /* Делаем его полностью видимым */
-  transition: color 0.3s ease;
-}
-
-/* При наведении на header — чёрный */
-.header:hover .search-input::placeholder {
-  color: black;
-  transition: color 0.2s ease;
-}
-
-/* При наведении на меню — всё черное */
-.header:hover .search-line {
-  background: black;
-  transition: color 0.3s ease;
-}
-
-.header:hover .search-btn {
-  color: black;
-  transition: color 0.3s ease;
-}
-
-.header:hover .search-input {
-  color: black;
-  transition: color 0.3s ease;
 }

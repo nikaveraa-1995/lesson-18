@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 // .slides {
 //   position: relative;
 //   height: 150px;
@@ -47,94 +43,70 @@
 // }
 
 .carousel {
-  top: 0;
   position: relative;
   width: 100%;
-  height: 90vh; /* Высота на весь экран */
+  height: 90vh;
   overflow: hidden;
-}
-
-.slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.slide {
-  position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* Прячем все слайды */
-  transition: opacity 0.4s ease-in-out;
+
+  .slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+
+      .slide-content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
 
-.slide.active {
-  opacity: 1; /* Только активный слайд виден */
-}
-
-.slide-content {
+@mixin text-block-styles($color) {
+  width: 50%;
+  background: $color;
+  color: white;
   display: flex;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
 .text-block-1 {
-  width: 50%;
-  background: #1c5327;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+  @include text-block-styles(#7a6d4d);
 }
 
 .text-block-2 {
-  width: 50%;
-  background: #948982;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  @include text-block-styles(#948982);
 }
 
 .text-block-3 {
-  width: 50%;
-  background: #526071;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  @include text-block-styles(#526071);
 }
 
 .text-block-4 {
-  width: 50%;
-  background: #ced77b;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  @include text-block-styles(#ced77b);
 }
 
 .text-block-5 {
-  width: 50%;
-  background: #dbadc2;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  @include text-block-styles(#dbadc2);
 }
 
 .image-block {
@@ -142,47 +114,111 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.image-block img {
-  width: 100%;
-  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .text-block,
 .image-block {
   width: 50%;
   top: 0;
-  padding: 0; /* Убираем внутренние отступы */
-  margin: 0; /* Убираем внешние отступы */
+  padding: 0;
+  margin: 0;
 }
 
 /*custom*/
-.indicators,
-.controls {
+.indicators {
   position: absolute;
   display: flex;
-  gap: 1em;
-  margin-bottom: 1em;
-  bottom: 10px; /* Смещаем вниз */
+  gap: 8px; // Уменьшаем расстояние между индикаторами
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+
+  .indicator {
+    width: 40px; // Длина полоски
+    height: 6px; // Делаем индикатор тонким
+    background-color: rgba(225, 222, 222, 0.6);
+    border-radius: 2px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: white;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    &.active {
+      background-color: rgb(251, 248, 248);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.811);
+    }
+  }
 }
 
-.indicator,
-.control {
-  display: block;
-  padding: 1em 2em;
-  background-color: rgb(225, 222, 222);
-  cursor: pointer;
-  user-select: none;
-  min-width: 100px;
-  text-align: center;
-}
-.control:hover {
-  background-color: #bfbaba;
+.controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0; // Скрываем кнопки
+  transition: opacity 0.3s ease-in-out;
+
+  .control {
+    background-color: rgba(229, 204, 153, 0.492);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease,
+      box-shadow 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+      transform: scale(1.2);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+    &-prev {
+      position: absolute;
+      left: 20px;
+    }
+
+    &-next {
+      position: absolute;
+      right: 20px;
+    }
+
+    &-pause {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+  }
 }
 
-.indicator.active {
-  background-color: tomato;
+// Показываем кнопки при наведении на карусель
+.carousel:hover .controls {
+  opacity: 1;
 }
