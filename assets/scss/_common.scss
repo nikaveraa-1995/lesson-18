@@ -1,8 +1,10 @@
+/* Убираем все отступы у body и html */
 * {
   box-sizing: border-box;
 }
 
-.container {
-  display: block;
-  unicode-bidi: isolate;
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
