@@ -76,12 +76,22 @@ class Carousel {
     document.addEventListener('keydown', this._pressKey.bind(this));
   }
 
+  // _goToNth(n) {
+  //   this.slides[this.currentSlide].classList.toggle('active');
+  //   this.indItems[this.currentSlide].classList.toggle('active');
+  //   this.currentSlide = (n + this.SLIDES_COUNT) % this.SLIDES_COUNT;
+  //   this.slides[this.currentSlide].classList.toggle('active');
+  //   this.indItems[this.currentSlide].classList.toggle('active');
+  // }
+
   _goToNth(n) {
-    this.slides[this.currentSlide].classList.toggle('active');
-    this.indItems[this.currentSlide].classList.toggle('active');
+    this.slides[this.currentSlide].classList.remove('active');
+    this.indItems[this.currentSlide].classList.remove('active');
+
     this.currentSlide = (n + this.SLIDES_COUNT) % this.SLIDES_COUNT;
-    this.slides[this.currentSlide].classList.toggle('active');
-    this.indItems[this.currentSlide].classList.toggle('active');
+
+    this.slides[this.currentSlide].classList.add('active');
+    this.indItems[this.currentSlide].classList.add('active');
   }
 
   _goToPrev() {

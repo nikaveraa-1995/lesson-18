@@ -8,73 +8,160 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  // background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон */
   transition: background-color 0.3s ease;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    width: 100%;
+  }
+
+  &-logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    filter: invert(1);
+    margin-left: 0px;
+    transition: color 0.3s ease;
+  }
+
+  &-nav .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-nav .nav-list li {
+    margin-right: 35px;
+  }
+
+  &-nav .nav-list li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+  }
+
+  &-icons {
+    display: flex !important;
+    flex-direction: row; /* Выстраиваем иконки в одну линию */
+    align-items: center; /* Выравниваем их по центру */
+    gap: 15px; /* Добавляем расстояние между иконками */
+  }
 }
 
 .header:hover {
   background-color: rgba(255, 255, 255, 1); /* Белый фон при наведении */
 }
 
-.header-container {
+.menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 30px;
+  width: 100%;
 }
 
-.header-logo a {
-  text-decoration: none;
-  font-size: 24px;
+.menu-item {
+  color: white !important; /* Делаем белым и перебиваем другие стили */
   font-weight: bold;
-  color: #333;
-}
-
-.header-nav .nav-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.header-nav .nav-list li {
-  margin-right: 20px;
-}
-
-.header-nav .nav-list li a {
+  font-size: 18px;
   text-decoration: none;
-  color: #333;
   padding: 5px 10px;
-}
-
-.header-search .search-form {
   display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
-.header-search input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px 0 0 3px;
+.header:hover .menu-item {
+  color: black !important;
 }
 
-.header-search button {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-left: none;
-  background-color: #333;
+.header-logo img {
+  filter: invert(1);
+}
+.header-icons i {
   color: #fff;
-  border-radius: 0 3px 3px 0;
+  transition: filter 0.3s ease;
+}
+
+/* При наведении на header делаем логотип и иконки черными */
+.header:hover .header-logo img {
+  filter: invert(0);
+  transition: color 0.3s ease;
+}
+.header:hover .header-icons i {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* Контейнер поиска */
+.header-search {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Выравниваем лупу и текст справа */
+  position: relative;
+  width: 180px; /* Фиксированная ширина */
+}
+
+/* Полоска (всегда видна) */
+.search-line {
+  width: 200px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  bottom: -20px;
+}
+
+/* Лупа справа */
+.search-btn {
+  position: absolute;
+  left: 150px;
+  top: -10px; /* Над полоской */
+  color: white;
+  font-size: 18px;
   cursor: pointer;
 }
 
-.header-icons a {
-  margin-left: 15px;
-  color: #333;
-  text-decoration: none;
-  font-size: 18px;
+/* Вводимый текст (находится над полоской) */
+.search-input {
+  width: 200px;
+  text-align: left;
+  font-size: 14px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: -10px; /* Размещение над полоской */
 }
 
-/* Стили для слайдера */
-.slider {
-  /* Фон слайдера */
+.search-input::placeholder {
+  color: white;
+  opacity: 1; /* Делаем его полностью видимым */
+  transition: color 0.3s ease;
+}
+
+/* При наведении на header — чёрный */
+.header:hover .search-input::placeholder {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* При наведении на меню — всё черное */
+.header:hover .search-line {
+  background: black;
+  transition: color 0.3s ease;
+}
+
+.header:hover .search-btn {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.header:hover .search-input {
+  color: black;
+  transition: color 0.3s ease;
 }

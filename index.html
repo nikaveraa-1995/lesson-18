@@ -15,9 +15,11 @@
 
   <header class="header">
     <div class="header-container">
+      <div class="menu">
       <div class="header-logo">
-        <a href="#">LOGO</a>
+        <a class="menu-item" href="#"><img src="./assets/images/logo.png" alt="logo" height="40px"></a>
       </div>
+
 
       <nav class="header-nav">
 
@@ -34,46 +36,47 @@
 
         <ul class="nav-list">
           <li>
-            <a href="#">Shoes</a>
+            <a class="menu-item" href="#">Shoes</a>
           </li>
           <li>
-            <a href="#">Сlothes</a>
+            <a class="menu-item" href="#">Сlothes</a>
           </li>
           <li>
-            <a href="#">Equipment</a>
+            <a class="menu-item" href="#">Equipment</a>
           </li>
           <li>
-            <a href="#">Accessories</a>
+            <a class="menu-item" href="#">Accessories</a>
           </li>
           <li>
-            <a href="#">Brands</a>
+            <a class="menu-item" href="#">Brands</a>
           </li>
           <li>
-            <a href="#">New items</a>
+            <a class="menu-item" href="#">New items</a>
           </li>
           <li>
-            <a href="#">Sale</a>
+            <a class="menu-item" href="#">Sale</a>
           </li>
         </ul>
       </nav>
 
       <div class="header-search">
-        <form class="search-form">
-          <input type="text" placeholder="Search...">
-          <button type="submit">Go</button>
-        </form>
-      </div>
-
+        <input type="text" class="search-input" placeholder="Search">
+        <div class="search-line"></div>
+        <i class="fa-solid fa-magnifying-glass search-btn"></i>
+    </div>
+    
       <div class="header-icons">
-        <a href="#"><i class="fa-solid fa-user fa-xl" style="color: #B197FC;"></i></a>
-        <a href="#"><i class="fa-solid fa-heart fa-xl" style="color: #B197FC;"></i></a>
-          <a href="#"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #B197FC;"></i></a>
+        <a  href="#"><i class="fa-regular fa-user" ></i></a>
+        <a  href="#"><i class="fa-regular fa-heart" ></i></a>
+          <a   href="#"><i class="fa-solid fa-cart-shopping" ></i></a>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
+    
 
       
-      <div id="carousel" class="carousel slider">
+      <!-- <div id="carousel" class="carousel slider">
         <ul id="slides-container" class="slides">
           <li class="slide item active"></li>
           <li class="slide item"></li>
@@ -81,7 +84,50 @@
           <li class="slide item"></li>
           <li class="slide item"></li>
         </ul>
+      </div> -->
+
+      <div id="carousel" class="carousel slider">
+        <ul id="slides-container" class="slides">
+          <li class="slide item active">
+            <div class="slide-content">
+              <div class="text-block-1">
+                <h2>Заголовок 1</h2>
+                <p>Описание первого слайда...</p>
+              </div>
+              <div class="image-block">
+                <img src="./assets/images/skateboarder-1.jpeg" alt="Картинка 1">
+              </div>
+            </div>
+          </li>
+          <li class="slide item">
+            <div class="slide-content">
+              <div class="text-block-2">
+                <h2>Заголовок 2</h2>
+                <p>Описание второго слайда...</p>
+              </div>
+              <div class="image-block">
+                <img src="https://via.placeholder.com/500" alt="Картинка 2">
+              </div>
+            </div>
+          </li>
+          <li class="slide item">
+            <div class="slide-content">
+              <div class="text-block-3">
+                <h2>Заголовок 3</h2>
+                <p>Описание третьего слайда...</p>
+              </div>
+              <div class="image-block">
+                <img src="https://via.placeholder.com/500" alt="Картинка 3">
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+      
+      
+  
+      
+    
     
     <script src="./assets/js/index.js" type="module"></script>
   </body>
