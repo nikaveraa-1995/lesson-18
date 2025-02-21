@@ -1,6 +1,7 @@
 @use 'skin' as *;
 @use 'variables' as *;
 @use 'mixins-media' as *;
+@use 'header-menu';
 /* Стили для header */
 .header {
   position: fixed;
