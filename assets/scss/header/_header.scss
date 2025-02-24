@@ -11,21 +11,48 @@
   z-index: 1000;
   transition: background-color 0.3s ease;
 
+  @include md {
+    .menu-item,
+    .header-icons i,
+    .search-btn {
+      color: black !important; // Черный цвет по умолчанию
+    }
+
+    .header-logo img {
+      filter: invert(0) !important; // Делаем логотип черным только на md
+      max-width: 160px;
+    }
+
+    background-color: rgba(255, 255, 255, 1); // Фон остается белым на md
+  }
+
   &-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
     width: 100%;
+
+    @include md {
+      justify-content: center; // Центрируем логотип
+      position: relative;
+    }
   }
 
-  &-logo a {
+  &-logo {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
     filter: invert(1);
     margin-left: 0px;
     transition: color 0.3s ease;
+
+    @include md {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); // Центрируем логотип ровно по середине
+      max-width: 120px; // Уменьшаем логотип
+    }
   }
 
   &-nav .nav-list {
@@ -33,6 +60,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include md {
+      display: none;
+    }
   }
 
   &-nav .nav-list li {
@@ -43,13 +74,17 @@
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
-  }
 
-  &-icons {
-    display: flex !important;
-    flex-direction: row; /* Выстраиваем иконки в одну линию */
-    align-items: center; /* Выравниваем их по центру */
-    gap: 15px; /* Добавляем расстояние между иконками */
+    &-icons a {
+      display: flex;
+      // flex-direction: row; /* Выстраиваем иконки в одну линию */
+      align-items: center; /* Выравниваем их по центру */
+      justify-content: flex-end; // Выравнивание справа
+
+      @include md {
+        order: 2;
+      }
+    }
   }
 
   .menu-toggle {
