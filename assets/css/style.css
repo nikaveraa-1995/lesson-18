@@ -364,14 +364,14 @@
 
   color: transparent;
 
-  font-size: 48px;
+  font-size: 50px;
   font-weight: bold;
 
   -webkit-text-stroke: 2px white;
 }
 
 .subtitle-large {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 500;
 }
 
@@ -791,12 +791,12 @@ body {
     order: 2;
   }
   .title-outline {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     text-align: center;
   }
   .subtitle-large {
-    margin-top: 5px;
+    margin-top: 10px;
 
     text-align: center;
   }
@@ -816,23 +816,23 @@ body {
   }
   .carousel .text-block-1 {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
   }
   .carousel .text-block-2 {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
   }
   .carousel .text-block-3 {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
   }
   .carousel .text-block-4 {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
   }
   .carousel .text-block-5 {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
   }
   .carousel .image-block {
     width: 100%;

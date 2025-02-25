@@ -120,7 +120,7 @@
 }
 
 .title-outline {
-  font-size: 48px; // Размер заголовка
+  font-size: 50px; // Размер заголовка
   font-weight: bold;
   text-transform: uppercase; // Все буквы заглавные
   color: transparent; // Прозрачный текст
@@ -129,17 +129,17 @@
 
   @include md {
     text-align: center;
-    margin-bottom: 10px; // Уменьшаем отступ снизу на маленьких экранах
+    margin-bottom: 20px; // Уменьшаем отступ снизу на маленьких экранах
   }
 }
 
 .subtitle-large {
-  font-size: 24px; // Увеличенный размер шрифта
+  font-size: 30px; // Увеличенный размер шрифта
   font-weight: 500;
 
   @include md {
     text-align: center;
-    margin-top: 5px; // Уменьшаем отступ сверху на маленьких экранах
+    margin-top: 10px; // Уменьшаем отступ сверху на маленьких экранах
   }
 }
 
