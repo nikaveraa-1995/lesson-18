@@ -81,12 +81,6 @@
 
 /* Контейнер поиска */
 .header-search {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: flex-end;
-  // position: relative;
-  // width: 180px;
-
   display: flex;
   align-items: center;
   position: relative;
@@ -104,6 +98,7 @@
     background: white;
     position: absolute;
     bottom: -20px;
+    right: 12px;
 
     @include md {
       display: none;
@@ -149,13 +144,8 @@
 }
 .menu__mobile {
   position: relative;
+
   display: none;
-  // align-items: center;
-  // justify-content: center;
-  // height: 100vh;
-  // width: 40px;
-  // height: 30px;
-  // margin: 0 20px;
 
   @include md {
     display: flex;
@@ -167,7 +157,10 @@
 
   @include sm {
     display: flex; // Показываем на sm\
-    margin: 0 20px;
+    position: absolute;
+    left: 20px; // Бургер влево
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &_button {
@@ -183,7 +176,7 @@
       }
       &.menu__mobile_button:before,
       &.menu__mobile_button:after {
-        top: 40%;
+        top: 50%;
       }
       &.menu__mobile_button:before {
         transform: rotate(45deg);
@@ -200,7 +193,7 @@
       position: absolute;
       height: 4px;
       width: 100%;
-      background-color: #1e272e;
+      background-color: #1e1720;
       border-radius: 6px;
       opacity: 1;
     }
@@ -219,7 +212,10 @@
       top: 0;
     }
     &:after {
-      top: calc(100% - 4px);
+      top: calc(100% - 5px);
     }
   }
+}
+.nav-list.open {
+  display: block;
 }

@@ -1,53 +1,17 @@
-// .slides {
-//   position: relative;
-//   height: 150px;
-//   padding: 0px;
-//   margin: 0px;
-//   list-style-type: none;
-//   margin-bottom: 1em;
-// }
-
-// .slide {
-//   position: absolute;
-//   left: 0px;
-//   top: 0px;
-//   width: 100%;
-//   height: 100%;
-//   opacity: 0;
-//   z-index: 1;
-//   transition: opacity 1s;
-// }
-
-// .active {
-//   opacity: 1;
-//   z-index: 2;
-// }
-
-// .slide:nth-of-type(1) {
-// }
-
-// .slide:nth-of-type(2) {
-//   background: orange;
-// }
-
-// .slide:nth-of-type(3) {
-//   background: green;
-// }
-
-// .slide:nth-of-type(4) {
-//   background: blue;
-// }
-
-// .slide:nth-of-type(5) {
-//   background: purple;
-// }
+@use 'skin' as *;
+@use 'variables' as *;
+@use 'mixins-media' as *;
 
 .carousel {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   top: 0;
+
+  @include md {
+    top: 60px;
+  }
 
   .slides {
     position: relative;
@@ -73,60 +37,87 @@
         display: flex;
         width: 100%;
         height: 100%;
+
+        @include md {
+          flex-direction: column; // Текст сверху, картинка снизу
+          align-items: center;
+          height: auto;
+        }
       }
     }
   }
-}
 
-@mixin text-block-styles($color) {
-  width: 50%;
-  background: $color;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
+  @mixin text-block-styles($color) {
+    width: 50%;
+    background: $color;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 
-.text-block-1 {
-  @include text-block-styles(#7a6d4d);
-}
+    @include md {
+      width: 100%;
+      height: 40vh; // На мобилке равномерно делим
+    }
 
-.text-block-2 {
-  @include text-block-styles(#948982);
-}
-
-.text-block-3 {
-  @include text-block-styles(#526071);
-}
-
-.text-block-4 {
-  @include text-block-styles(#ced77b);
-}
-
-.text-block-5 {
-  @include text-block-styles(#dbadc2);
-}
-
-.image-block {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 100%;
-    height: 100%;
+    &.h2 {
+      font-size: 48px; // Размер заголовка
+      font-weight: bold;
+      text-transform: uppercase; // Все буквы заглавные
+      color: transparent; // Прозрачный текст
+      -webkit-text-stroke: 2px white; // Белая обводка
+      letter-spacing: 2px; // Добавим расстояние между буквами
+    }
   }
-}
 
-.text-block,
-.image-block {
-  width: 50%;
-  top: 0;
-  padding: 0;
-  margin: 0;
+  .text-block-1 {
+    @include text-block-styles(#7a6d4d);
+  }
+
+  .text-block-2 {
+    @include text-block-styles(#948982);
+  }
+
+  .text-block-3 {
+    @include text-block-styles(#526071);
+  }
+
+  .text-block-4 {
+    @include text-block-styles(#ced77b);
+  }
+
+  .text-block-5 {
+    @include text-block-styles(#dbadc2);
+  }
+
+  .image-block {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      object-fit: cover; // Картинка не будет растягиваться
+      width: 100%;
+      height: 100%;
+    }
+
+    @include md {
+      object-fit: contain; // Картинка не будет растягиваться
+      width: 100%;
+      height: 50vh; // Делаем равномерно с текстом
+    }
+  }
+
+  .text-block,
+  .image-block {
+    width: 50%;
+    top: 0;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /*custom*/
@@ -134,7 +125,7 @@
   position: absolute;
   display: flex;
   gap: 8px; // Уменьшаем расстояние между индикаторами
-  bottom: 20px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -168,6 +159,10 @@
   align-items: center;
   opacity: 0; // Скрываем кнопки
   transition: opacity 0.3s ease-in-out;
+
+  @include md {
+    display: none;
+  }
 
   .control {
     background-color: rgba(229, 204, 153, 0.492);
