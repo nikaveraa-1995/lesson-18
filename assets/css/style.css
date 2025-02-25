@@ -436,21 +436,10 @@
   justify-content: center;
 
   width: 50%;
-  padding: 40px;
+  padding: 30px;
 
   color: white;
   background: #7a6d4d;
-}
-.carousel .text-block-1.h2 {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: transparent;
-
-  font-size: 48px;
-  font-weight: bold;
-
-  -webkit-text-stroke: 2px white;
 }
 .carousel .text-block-2 {
   display: -webkit-box;
@@ -468,21 +457,10 @@
   justify-content: center;
 
   width: 50%;
-  padding: 40px;
+  padding: 30px;
 
   color: white;
   background: #948982;
-}
-.carousel .text-block-2.h2 {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: transparent;
-
-  font-size: 48px;
-  font-weight: bold;
-
-  -webkit-text-stroke: 2px white;
 }
 .carousel .text-block-3 {
   display: -webkit-box;
@@ -500,21 +478,10 @@
   justify-content: center;
 
   width: 50%;
-  padding: 40px;
+  padding: 30px;
 
   color: white;
   background: #526071;
-}
-.carousel .text-block-3.h2 {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: transparent;
-
-  font-size: 48px;
-  font-weight: bold;
-
-  -webkit-text-stroke: 2px white;
 }
 .carousel .text-block-4 {
   display: -webkit-box;
@@ -532,21 +499,10 @@
   justify-content: center;
 
   width: 50%;
-  padding: 40px;
+  padding: 30px;
 
   color: white;
   background: #ced77b;
-}
-.carousel .text-block-4.h2 {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: transparent;
-
-  font-size: 48px;
-  font-weight: bold;
-
-  -webkit-text-stroke: 2px white;
 }
 .carousel .text-block-5 {
   display: -webkit-box;
@@ -564,21 +520,10 @@
   justify-content: center;
 
   width: 50%;
-  padding: 40px;
+  padding: 30px;
 
   color: white;
   background: #dbadc2;
-}
-.carousel .text-block-5.h2 {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: transparent;
-
-  font-size: 48px;
-  font-weight: bold;
-
-  -webkit-text-stroke: 2px white;
 }
 .carousel .image-block {
   display: -webkit-box;
@@ -846,9 +791,13 @@ body {
     order: 2;
   }
   .title-outline {
+    margin-bottom: 10px;
+
     text-align: center;
   }
   .subtitle-large {
+    margin-top: 5px;
+
     text-align: center;
   }
   .carousel {
@@ -910,5 +859,18 @@ body {
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+  }
+  .header-logo {
+    position: absolute;
+    left: 48%;
+
+    max-width: 150px;
+
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .icon {
+    padding: 1px;
   }
 }

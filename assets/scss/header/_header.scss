@@ -53,6 +53,13 @@
       transform: translateX(-50%); // Центрируем логотип ровно по середине
       max-width: 150px; // Уменьшаем логотип
     }
+
+    @include sm {
+      position: absolute;
+      left: 48%;
+      transform: translateX(-50%); // Центрируем логотип ровно по середине
+      max-width: 150px; // Уменьшаем логотип
+    }
   }
 
   &-nav .nav-list {
@@ -122,6 +129,7 @@
 
   @include md {
     text-align: center;
+    margin-bottom: 10px; // Уменьшаем отступ снизу на маленьких экранах
   }
 }
 
@@ -131,9 +139,14 @@
 
   @include md {
     text-align: center;
+    margin-top: 5px; // Уменьшаем отступ сверху на маленьких экранах
   }
 }
 
 .icon {
   padding: 5px;
+
+  @include sm {
+    padding: 1px;
+  }
 }

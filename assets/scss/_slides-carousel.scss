@@ -55,20 +55,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 30px;
 
     @include md {
       width: 100%;
       height: 40vh; // На мобилке равномерно делим
-    }
-
-    &.h2 {
-      font-size: 48px; // Размер заголовка
-      font-weight: bold;
-      text-transform: uppercase; // Все буквы заглавные
-      color: transparent; // Прозрачный текст
-      -webkit-text-stroke: 2px white; // Белая обводка
-      letter-spacing: 2px; // Добавим расстояние между буквами
     }
   }
 
