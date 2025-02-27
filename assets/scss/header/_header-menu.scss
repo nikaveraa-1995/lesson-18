@@ -115,7 +115,13 @@
 
     @include md {
       position: static;
-      margin-left: 10px; // Двигаем лупу ближе к бургеру
+      margin-left: 15px; // Двигаем лупу ближе к бургеру
+    }
+
+    @include sm {
+      position: static;
+      margin-left: 5px; // Двигаем лупу ближе к бургеру
+      font-size: 16px;
     }
   }
 
@@ -169,6 +175,11 @@
     width: 40px;
     cursor: pointer;
     background-color: transparent;
+
+    @include sm {
+      height: 20px;
+      width: 30px;
+    }
 
     &.active {
       span {

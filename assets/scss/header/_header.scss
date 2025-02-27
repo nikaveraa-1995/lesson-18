@@ -45,7 +45,7 @@
     font-weight: bold;
     filter: invert(1);
     margin-left: 0px;
-    transition: color 0.3s ease;
+    transition: filter 0.3s ease, opacity 0.3s ease;
 
     @include md {
       position: absolute;
@@ -59,6 +59,19 @@
       left: 48%;
       transform: translateX(-50%); // Центрируем логотип ровно по середине
       max-width: 150px; // Уменьшаем логотип
+    }
+
+    &--size {
+      height: 40px;
+
+      @include md {
+        height: 35px;
+        width: 200px;
+      }
+
+      @include sm {
+        height: 30px;
+      }
     }
   }
 
@@ -74,8 +87,8 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 30%;
-      background-color: #e2e0e4c1;
+      width: 40%;
+      background-color: white;
       padding: 10px;
       z-index: 10;
 

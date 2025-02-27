@@ -116,9 +116,17 @@
   position: absolute;
   display: flex;
   gap: 8px; // Уменьшаем расстояние между индикаторами
-  bottom: 100px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+
+  @include md {
+    bottom: 20px;
+  }
+
+  @include sm {
+    bottom: 30px;
+  }
 
   .indicator {
     width: 40px; // Длина полоски

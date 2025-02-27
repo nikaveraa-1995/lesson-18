@@ -300,8 +300,10 @@
 .header-logo {
   margin-left: 0;
 
-  -webkit-transition: color 0.3s ease;
-          transition: color 0.3s ease;
+  -webkit-transition: opacity 0.3s ease, -webkit-filter 0.3s ease;
+          transition: opacity 0.3s ease, -webkit-filter 0.3s ease;
+          transition: filter 0.3s ease, opacity 0.3s ease;
+          transition: filter 0.3s ease, opacity 0.3s ease, -webkit-filter 0.3s ease;
   text-decoration: none;
 
   font-size: 24px;
@@ -309,6 +311,9 @@
 
   -webkit-filter: invert(1);
           filter: invert(1);
+}
+.header-logo--size {
+  height: 40px;
 }
 .header-nav .nav-list {
   display: -webkit-box;
@@ -555,7 +560,7 @@
 }
 .indicators {
   position: absolute;
-  bottom: 100px;
+  bottom: 40px;
   left: 50%;
 
   display: -webkit-box;
@@ -697,6 +702,49 @@ body {
   padding: 0;
 }
 
+.company-details {
+  position: relative;
+  z-index: 5;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  padding: 40px 30px;
+
+  color: #9b9b9b;
+  background-color: #313131;
+
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+}
+.company-details-wrapper {
+  width: 65%;
+}
+.company-security {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  align-items: flex-end;
+  -ms-flex-align: end;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+
+  width: 35%;
+  padding-right: 90px;
+}
+.company-copyright {
+  margin-top: 10px;
+}
+.company-icon-label {
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  font-size: 50px;
+}
 @media (max-width: 767.8px) {
   .menu {
     height: 60px;
@@ -714,7 +762,7 @@ body {
   .header-search .search-btn {
     position: static;
 
-    margin-left: 10px;
+    margin-left: 15px;
   }
   .header-search .search-input {
     display: none;
@@ -763,6 +811,10 @@ body {
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  .header-logo--size {
+    width: 200px;
+    height: 35px;
+  }
   .header-nav .nav-list {
     position: absolute;
     z-index: 10;
@@ -775,10 +827,10 @@ body {
     -ms-flex-direction: column;
         flex-direction: column;
 
-    width: 30%;
+    width: 40%;
     padding: 10px;
 
-    background-color: rgba(226, 224, 228, 0.7568627451);
+    background-color: white;
   }
   .header-nav .nav-list.open {
     display: -webkit-box !important;
@@ -841,12 +893,43 @@ body {
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .indicators {
+    bottom: 20px;
+  }
   .controls {
     display: none;
   }
-}
+  .company-details {
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
 
+    margin-top: 60px;
+    padding: 20px;
+  }
+  .company-details-wrapper {
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+
+    width: 100%;
+  }
+  .company-security {
+    margin-top: 10px;
+  }
+}
 @media (max-width: 575.8px) {
+  .header-search .search-btn {
+    position: static;
+
+    margin-left: 5px;
+
+    font-size: 16px;
+  }
   .menu__mobile {
     position: absolute;
     top: 50%;
@@ -860,6 +943,10 @@ body {
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
   }
+  .menu__mobile_button {
+    width: 30px;
+    height: 20px;
+  }
   .header-logo {
     position: absolute;
     left: 48%;
@@ -870,7 +957,40 @@ body {
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  .header-logo--size {
+    height: 30px;
+  }
   .icon {
     padding: 1px;
+  }
+  .indicators {
+    bottom: 30px;
+  }
+  .company-security {
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    width: 100%;
+    padding-right: 0;
+
+    gap: 10px;
+  }
+  .company-security-text {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -ms-flex-align: start;
+
+    padding-right: 0;
+
+    text-align: left;
+    white-space: nowrap;
   }
 }
