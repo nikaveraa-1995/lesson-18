@@ -88,7 +88,7 @@
 
   @include md {
     position: absolute;
-    left: 70px; // Подвигаем правее от бургера
+    left: 70px; 
     width: auto;
   }
 
@@ -115,12 +115,12 @@
 
     @include md {
       position: static;
-      margin-left: 15px; // Двигаем лупу ближе к бургеру
+      margin-left: 15px; 
     }
 
     @include sm {
       position: static;
-      margin-left: 5px; // Двигаем лупу ближе к бургеру
+      margin-left: 5px; 
       font-size: 16px;
     }
   }
@@ -156,15 +156,15 @@
   @include md {
     display: flex;
     position: absolute;
-    left: 20px; // Бургер влево
+    left: 20px; 
     top: 50%;
     transform: translateY(-50%);
   }
 
   @include sm {
-    display: flex; // Показываем на sm\
+    display: flex; 
     position: absolute;
-    left: 20px; // Бургер влево
+    left: 20px; 
     top: 50%;
     transform: translateY(-50%);
   }
